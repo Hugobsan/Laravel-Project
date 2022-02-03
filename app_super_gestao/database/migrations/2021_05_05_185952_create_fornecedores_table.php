@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUnidadesTable extends Migration
+class CreateFornecedoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateUnidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('unidades', function (Blueprint $table) {
+        Schema::create('fornecedores', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 50);
             $table->timestamps();
-            $table->string('unidade', 5);
-            $table->string('descricao', 30);
         });
     }
 
@@ -28,6 +27,7 @@ class CreateUnidadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unidades');
+        Schema::dropIfExists('fornecedores');
+        // Schema::drop('fornecedores');
     }
 }
