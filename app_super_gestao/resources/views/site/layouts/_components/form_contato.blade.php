@@ -8,7 +8,7 @@
     <input name="email" type="email" placeholder="E-mail" class="{{ $borda }}">
     <br>
     <label for="motivo">Qual o motivo do contato?</label>
-    <select name="motivo" id="motivo" class="{{ $borda }}">
+    <select name="motivo_contato" id="motivo" class="{{ $borda }}">
         <option value="1" default>Dúvida</option>
         <option value="2">Elogio</option>
         <option value="3">Reclamação</option>
