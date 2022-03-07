@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Fornecedor;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class FornecedorSeeder extends Seeder
@@ -19,7 +20,7 @@ class FornecedorSeeder extends Seeder
         $fornecedor = new Fornecedor();
         $fornecedor->nome = Str::random(10);
         $fornecedor->site = 'www.'.strtolower($fornecedor->nome).'.com.br';
-        $fornecedor->uf = $uf_array[rand(0,26)];
+        $fornecedor->uf = Arr::random($uf_array);
         $fornecedor->email = 'contato@'.strtolower($fornecedor->nome).'.com.br';
         $fornecedor->save();
 
