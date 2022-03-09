@@ -31,7 +31,8 @@
                 @component('site.layouts._components.form_contato', 
                 [
                 'borda' => 'borda-branca', 
-                'action' => 'site.index' 
+                'action' => 'site.index',
+                'motivos_contato' => $motivos_contato  
                 ])
                 @endcomponent
             </div>
