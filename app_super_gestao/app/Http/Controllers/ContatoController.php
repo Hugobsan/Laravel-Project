@@ -8,19 +8,24 @@ use App\SiteContato;
 class ContatoController extends Controller
 {
     public function contato(Request $request){
-        /*$contato = new SiteContato();
-        $contato->nome= $request->input('nome');
-        $contato->telefone= $request->input('telefone');
-        $contato->email= $request->input('email');
-        $contato->motivo_contato= $request->input('motivo');
-        $contato->mensagem= $request->input('mensagem');
-        $contato->save();*/
-        if(!empty($request->input('nome'))){
+        /*if(!empty($request->input('nome'))){
         $contato = new SiteContato();
         $contato->create($request->all());
-        }
-        //$contato->save();
+        }*/
+        
 
         return view('site.contato');
+    }
+    public function salvar(Request $request){
+        //realizar a validação dos dados disponíveis no request
+        $request->validate([
+            'nome' => 'min:2|max:40'
+            /*'telefone' => 'required',
+            'email' => 'required',
+            'motivo_contato' => 'required',
+            'mensagem' => 'required,'*/
+        ]);
+        //SiteContato::create($request->all());
+    
     }
 }
