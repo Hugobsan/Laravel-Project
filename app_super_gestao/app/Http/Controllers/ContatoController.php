@@ -17,8 +17,8 @@ class ContatoController extends Controller
         //realizar a validação dos dados disponíveis no request
         $request->validate([
             'nome' => 'min:2|max:40',
-            'telefone' => 'required',
-            'email' => 'email',
+            'telefone' => 'required|unique:site_contatos',
+            'email' => 'email|unique:site_contatos',
             'motivo_contatos_id' => 'required',
             'mensagem' => 'required'
         ]);
