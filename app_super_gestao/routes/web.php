@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware(LogAcessoMiddleware::class)
-    ->get('/', 'PrincipalController@principal')
-    ->name('site.index');
+Route::get('/', 'PrincipalController@principal')->name('site.index');
 
 Route::post('/', 'PrincipalController@principal')->name('site.index');
 

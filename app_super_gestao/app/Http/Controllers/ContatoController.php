@@ -5,13 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\SiteContato;
 use App\MotivoContato;
-use App\Http\Middleware\LogAcessoMiddleware;
 
 class ContatoController extends Controller
 {
-    public function __construct(){
-        $this->middleware(LogAcessoMiddleware::class);
-    }
     public function contato(Request $request){
         $motivos_contato = MotivoContato::all();
 
