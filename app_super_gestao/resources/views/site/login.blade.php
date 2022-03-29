@@ -12,7 +12,7 @@
                 @component('site.layouts._components.form_login')
                     <p> Faça login para acessar o SuperGestão </p>
                 @endcomponent
-                <span class="error">{{ isset($erro) && $erro != '' ? 'Usuário e/ou senha incorretos' : ''}}</span>
+                <span class="error">{{ isset($erro) && $erro != '' ? $erro : ''}}</span>
             </div>  
         </div>
 

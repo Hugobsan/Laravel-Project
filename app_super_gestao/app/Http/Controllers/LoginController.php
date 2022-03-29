@@ -8,7 +8,16 @@ use App\User;
 class LoginController extends Controller
 {
     public function index(Request $request) {
-        $erro = $request -> get('erro');
+        
+        //Tratamento de tipos de erro
+        $erro = '';
+        switch ($request -> get('erro')){
+            case 1:
+                $erro = "Usuário e/ou senha incorretos!";
+                break;
+
+        }
+
         return view('site.login', ['titulo' => 'Login', 'erro' => $erro]);
     }
 
