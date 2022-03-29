@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -22,6 +23,20 @@ class LoginController extends Controller
         ];
 
         $request->validate($regras, $feedback);
-        return redirect()->route('site.index');
+
+        $email = $request->get('usuario');
+        $password = $request->get('senha');
+
+        $user = new User();
+
+        $usuario = $user->where('email', $email)
+            ->where('password', $password)
+            ->get()
+            ->first();
+
+        if(isset($usuario->name))
+            return redirect()->route('site.index'); 
+        else
+            echo '<script> alert("Usuário e/ou senha incorretos!")</script>';
     }
 }
