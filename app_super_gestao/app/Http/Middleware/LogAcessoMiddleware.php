@@ -20,6 +20,6 @@ class LogAcessoMiddleware
         $rota = $request->getRequestUri();
         LogAcesso::create(['log' => "IP $ip requisitou a rota $rota"]);
         
-        return $next($request); 
+        $resposta = $next($request); 
     }
 }
