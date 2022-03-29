@@ -15,6 +15,9 @@ class LoginController extends Controller
             case 1:
                 $erro = "Usuário e/ou senha incorretos!";
                 break;
+            case 2:
+                $erro = "É necessário o login para ter acesso à página";
+                break;
 
         }
 
@@ -44,8 +47,13 @@ class LoginController extends Controller
             ->get()
             ->first();
 
-        if(isset($usuario->name))
-            return redirect()->route('site.index'); 
+        if(isset($usuario->name)){
+            session_start();
+            $_SESSION['nome']=$usuario->name;
+            $_SESSION['email']=$usuario->email;
+
+            return redirect()->route('app.clientes');
+        }
         else
             return redirect()->route('site.login', ['erro' => 1]); 
     }
