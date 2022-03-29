@@ -187,3 +187,15 @@ button:hover {
 .redes-sociais img {
     margin: 0px 15px 0px 15px;
 }
+
+.form-login{
+    width:30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error{
+    color: #f53a3a;
+    margin: 5px;
+    font-weight: bold;
+}
