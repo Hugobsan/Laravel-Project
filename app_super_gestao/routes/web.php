@@ -33,6 +33,7 @@ Route::prefix('app')->middleware('autenticacao:padrao')->group(function() {
     Route::get('/fornecedor', 'FornecedorController@index')->name('app.fornecedor');
     Route::post('/fornecedor/listar', 'FornecedorController@listar')->name('app.fornecedor.listar'); 
     Route::get('/fornecedor/adicionar', 'FornecedorController@adicionar')->name('app.fornecedor.adicionar'); 
+    Route::post('/fornecedor/adicionar', 'FornecedorController@adicionar')->name('app.fornecedor.adicionar'); 
 
 
     Route::get('/produto', 'ProdutosController@index')->name('app.produto');

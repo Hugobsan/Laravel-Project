@@ -14,7 +14,7 @@
 
     <div class="informacao-pagina">
         <div class="fornecedor-pesquisa">
-            <form method="post" action="">
+            <form method="post" action="{{ route('app.fornecedor.adicionar')}}">
                 @csrf
                 <input type="text" name="nome" placeholder="Nome" class="borda-preta">
                 <input type="text" name="site" placeholder="Site" class="borda-preta">
