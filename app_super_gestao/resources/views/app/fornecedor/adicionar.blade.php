@@ -9,17 +9,13 @@
         <p>Fornecedor - Adicionar</p>
     </div>
 
-    <div class="menu">
-        <ul>
-            <li><a href="{{route('app.fornecedor.adicionar')}}">Novo</a></li>
-            <li><a href="">Consulta</a></li>
-        </ul>
-
-    </div>
+    @component('app.layouts._components.menu')
+    @endcomponent
 
     <div class="informacao-pagina">
         <div class="fornecedor-pesquisa">
             <form method="post" action="">
+                @csrf
                 <input type="text" name="nome" placeholder="Nome" class="borda-preta">
                 <input type="text" name="site" placeholder="Site" class="borda-preta">
                 <input type="text" name="uf" placeholder="UF" class="borda-preta">
